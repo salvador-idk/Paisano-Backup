@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Responsive page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUNTOS DE EMERGENCIA</title>
+   
+    <style>
+    /*====FONTS====*/
+    @import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900);
+
+h1,
+p,
+a{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+}
+
+h1 {
+  font-size: 2em;
+  padding: 5px 0;
+  font-weight: 800;
+}
+
+p {
+  font-size: 1.1em;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+/*=====BODY=====*/
+        body { 
+            background-image: url("img/pino2.gif");
+            background-position: center 0%; 
+            background-size: cover;
+            background-size:600px 600px;
+            background-repeat: no-repeat;
+            
+        }
+/*=====HEADER=====*/
+.header {
+  width: 100%;
+  padding:20px 0;
+  text-align: center;
+  background: #52bf90;
+  color: white;
+}
+
+
+.btn-bgstroke {
+  font-size: 15px;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 300;
+  margin-top: 10px; 
+}
+
+.btn-bgstroke:hover {
+  background-color: white;
+  color: #33cccc;
+}
+/*=====WATERMARK=====*/
+    img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]{
+        display:none;
+    }
+
+/*=====BUTTON=====*/
+        button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+/*=====IMAGE=====*/
+
+img {
+    float:left;
+    width:100%;
+}
+    .responsive {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.sizeimg {
+    width: 45px;
+    height: 45px;
+}
+
+/*=====TABLE=====*/
+table {
+    table-layout: fixed;
+    width:100%;
+}
+/*=====HAMBURGER-MENU=====*/
+    
+    #menuToggle
+{
+  display: block;
+  position: relative;
+  top: 10px;
+  left: 10px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #ffffff;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 30px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 4px;
+  position: relative;
+
+  background: #ffffff;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ffffff;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 250px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 75px;
+
+  background: #52bf90;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+    /* padding with 'x'*/
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+    </style>
+<body>
+ <section class="header">
+     
+    <h1>BIENVENIDO PAISANO</h1>
+    <p>WELCOME</p>
+    <!--<a href="index.html"><img src="img/homev3.png"/></a>-->
+    <!--<a class="btn-bgstroke" href="index.html">HOME</a>-->
+    
+            <nav role="navigation" align="rigth">
+                <p align="left">MENU</p>
+    <div id="menuToggle">
+        
+      <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+      <input type="checkbox" />
+
+      <!--
+    Some spans to act as a hamburger.
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+      <ul id="menu">
+        <a href="">
+          <li></li>
+        </a>
+        <a href="https://www.google.com/maps/d/viewer?mid=1h3xQqVyRy0qAScKzU1Oi2sSCYjsI9iNd&ll=27.130794194236397%2C-101.76790165000001&z=7">
+          <li>FILTROS</li>
+        </a>
+        <a href="https://www.google.com/maps/d/u/0/viewer?ll=27.13365090850898%2C-101.41270136015625&z=7&mid=124DRaRsPTITO4OodgG3ZEpPZzUEfIAgn">
+          <li>GASOLINERAS</li>
+        </a>
+        <a href="https://www.google.com/maps/d/edit?mid=1Et3v4BPra1666YX6L2nfCmM7X_4cyZbl&ll=26.741312439126165%2C-101.8403537&z=7">
+          <li>CASETA DE COBRO</li>
+        </a>
+        <a href="https://www.google.com/maps/d/u/0/edit?mid=1t25SVkjzVuAIrlZ8BJE2fNgbS9fEOnh-&usp=sharing">
+          <li>FISCALÍAS Y DIRECCIONES DE DSPM</li>
+        </a>
+
+      </ul>
+    </div>
+  </nav>
+</section>
+
+<!--buttons-->
+<!--home-->
+    <a href="https://bienvendiopaisano.000webhostapp.com/"><img class="sizeimg" src="img/gohome-minimalist.png" width="10px"></a>
+    <!--other-->
+    <a href="https://bienvendiopaisano.000webhostapp.com/denuncia.html"><img class="sizeimg" src="img/goback-minimalist.png" width="10px"></a>
+    <!--images w/url-->
+        <img src="img/puntostxt.png" class="responsive">
+    <!--table w/imgs-->
+    <table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    
+    <tr>
+        <!--gasolineras-->
+        <td><a href="https://www.google.com/maps/d/u/0/viewer?ll=27.13365090850898%2C-101.41270136015625&z=7&mid=124DRaRsPTITO4OodgG3ZEpPZzUEfIAgn"><img src="img/gasstation-xbig.png"></a></td>
+        <!--filtros-->
+        <td><a href="https://www.google.com/maps/d/viewer?mid=1h3xQqVyRy0qAScKzU1Oi2sSCYjsI9iNd&ll=27.130794194236397%2C-101.76790165000001&z=7"><img src="img/Filtros-xbig.png"></a></td>
+        <!--casetas cobro-->
+        <td><a href="https://www.google.com/maps/d/edit?mid=1Et3v4BPra1666YX6L2nfCmM7X_4cyZbl&ll=26.741312439126165%2C-101.8403537&z=7"><img src="img/CasetasCobro-xbig.png"></a></td>
+        <!--DSPM y Fiscalias-->
+        <td><a href="https://www.google.com/maps/d/u/0/edit?mid=1t25SVkjzVuAIrlZ8BJE2fNgbS9fEOnh-&usp=sharing"><img src="img/DSPMyFiscalias-xbig.png"></a></td>
+        
+    </tr>
+</table>
+        
+        
+        
+
+<!--
+<center>
+    <button>
+        <div class="contenedor">
+            <a
+                href="https://www.google.com/maps/d/u/0/viewer?ll=27.13365090850898%2C-101.41270136015625&z=7&mid=124DRaRsPTITO4OodgG3ZEpPZzUEfIAgn">
+                <img src="img/Gasolineras.jpg" width="293" height="50" />
+            </a>
+            <br>
+            <a
+                href="https://www.google.com/maps/d/viewer?mid=1h3xQqVyRy0qAScKzU1Oi2sSCYjsI9iNd&ll=27.130794194236397%2C-101.76790165000001&z=7">
+                <img src="img/filtros.jpg" width="293" height="50" />
+            </a>
+            <br>
+            <a
+                href="https://www.google.com/maps/d/edit?mid=1Et3v4BPra1666YX6L2nfCmM7X_4cyZbl&ll=26.741312439126165%2C-101.8403537&z=7">
+                <img src="img/casetas.jpg" width="293" height="50" />
+            </a>
+            <br>
+            <a
+                href="https://www.google.com/maps/d/u/0/edit?mid=1xp5ifSdT9R4nQI53RFUid6e4eW-WxclZ&ll=27.31974843317519%2C-101.9131507&z=8">
+                <img src="img/fiscalias.jpg" width="293" height="50" />
+            </a>
+
+        </div>
+    </button>
+</center>
+-->
+    
+</body>
+
+</html>
